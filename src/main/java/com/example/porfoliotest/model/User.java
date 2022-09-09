@@ -16,7 +16,7 @@ public class User {
     @JoinColumn(name = "fonction_id")
     private Fonction fonction;
 
-
+    private  String password;
 
     @Column(unique = true, nullable = false)
     @Email
@@ -60,6 +60,14 @@ public class User {
 
     public void setFonction(Fonction fonction) {
         this.fonction = fonction;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
