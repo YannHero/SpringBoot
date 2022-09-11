@@ -10,9 +10,12 @@ import org.springframework.stereotype.Service;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-    public void ajouterUser (User user) {
+    public void createUser (User user) {
         BCryptPasswordEncoder encodePwd = new BCryptPasswordEncoder();
         user.setPassword(encodePwd.encode(user.getPassword()));
-    userRepository.save(user);
+        userRepository.save(user);
     }
+
+
+
 }
